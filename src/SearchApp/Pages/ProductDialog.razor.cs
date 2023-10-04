@@ -63,7 +63,7 @@ namespace SearchApp.Pages
             if (Product.id == null)
             {
                 await mongoDbService.InsertProduct(Product);
-                return OnClose.InvokeAsync(false);
+                return OnClose.InvokeAsync(true);
             }
             await mongoDbService.UpdateDocument<Product>("product", Product, Product.id);
             return OnClose.InvokeAsync(true);

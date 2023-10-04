@@ -64,7 +64,7 @@ namespace SearchApp.Pages
             {
                 Customer.id = Guid.NewGuid().ToString();
                 await mongoDbService.InsertCustomer(Customer);
-                return OnClose.InvokeAsync(false);
+                return OnClose.InvokeAsync(true);
             }
             await mongoDbService.UpdateDocument<Customer>("customer", Customer, Customer.id);
             return OnClose.InvokeAsync(true);

@@ -391,9 +391,6 @@
                 IMongoCollection<BsonDocument> collection = _database.GetCollection<BsonDocument>(collectionName);
                 var doc = o.ToBsonDocument();
 
-                await collection.InsertOneAsync(doc);
-                
-                
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
                 long _modifiedCount = 0;
                 
